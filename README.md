@@ -55,8 +55,6 @@ finally:
   - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain
 - you should be live!!
 
-[^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...
-
 ## misc/extra bonus
 
 - use Black and Pyright via text editor packages. Black should auto-format on save.
@@ -70,3 +68,5 @@ finally:
 ## huh
 
 this project was done during my time at the [Recurse Center](https://recurse.com/)
+
+[^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...

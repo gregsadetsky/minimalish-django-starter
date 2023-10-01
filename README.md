@@ -2,7 +2,7 @@
 
 ## why
 
-you are like me and want to _quickly_ start working on - and deploy - a minimalish Django project. wow you've literally come to the right place.
+you are like me and want to _quickly_ start working on - and deploy! - a minimalish Django project. wow you've literally come to the right place.
 
 this django "**project template**" ((it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...)) is based on / assumes you also want / is made out of the following:
 
@@ -11,16 +11,16 @@ this django "**project template**" ((it's really confusing to use the word "temp
 - pip / venv / requirements.txt - tried and true, it works, etc.
 - .env configuration files on developers' machines using `python-dotenv`
 - os-level env vars on production
-- dev/prod separation in the settings
+- TODO dev/prod separation in the settings
 - postgres via `psycopg2-binary`
-- postgres database url set via env var
-- custom user model (because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project))
+- postgres database url set via env var thanks to `dj-database-url`
+- TODO custom user model (because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project))
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
-- whitenoise
+- TODO whitenoise
 
 bonus round
 
-- configuration to deploy all of this to render.com - they are like heroku used to be i.e. good
+- configuration file to deploy all of this to render.com!! - they are like heroku used to be i.e. good
 
 ## what
 
@@ -38,6 +38,25 @@ django-admin startproject --template=https://github.com/gregsadetsky/minimalish-
 mv starter $PROJECTNAME
 git init
 ```
+
+then:
+
+- duplicate `.env.example` to `.env` and fill it out
+- create the appropriate postgres database locally
+- run `python manage.py migrate`
+- start the server with `python manage.py runserver`
+- do good work
+
+finally:
+
+- git add/commit/push to a new repo
+- go to render.com, create a new "blueprint instance" and point it to your repo
+- you should be live!!
+
+## misc/extra bonus
+
+- assuming you're using black (via an auto-save package in your editor)
+- also recommend using pyright (via your editor)
 
 ## other resources
 

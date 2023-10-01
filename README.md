@@ -53,7 +53,7 @@ finally:
 
 - git add/commit/push to a new repo
 - go to render.com, create a new "blueprint instance" and point it to your repo
-  - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain
+  - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain (comma separate if you have multiple)
 - you should be live!!
 
 ## misc/extra bonus
@@ -65,10 +65,7 @@ finally:
 - https://12factor.net/ - started it all
 - https://github.com/cookiecutter/cookiecutter-django - exactly like this, "Cookiecutter Django is a framework for jumpstarting production-ready Django projects quickly" - but too much-y for my taste. it's great! I just wanted my own so I made this.
 - https://github.com/jefftriplett/django-startproject - similar to this as well
-- other ones:
-  - [djangox](https://github.com/wsvincent/djangox)
-  - [django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate)
-  - [Django Material Kit](https://github.com/app-generator/django-material-kit)
+- other ones: [djangox](https://github.com/wsvincent/djangox), [django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate), [Django Material Kit](https://github.com/app-generator/django-material-kit)
 
 ## huh
 

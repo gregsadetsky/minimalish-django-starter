@@ -6,7 +6,7 @@ you are like me and want to _quickly_ start working on - and deploy! - a minimal
 
 ## ok
 
-this django "**project template**"[^1] is based on / assumes you also want / is made out of the following:
+this django "**project template**"[^1] aka boilerplate is based on / assumes you also want / is made out of the following:
 
 - django 4.2.5 (not married to this version, it's just very modern and version 5 juuust came out so I'll hang around 4.2)
 - python 3.10/.11 ish
@@ -19,6 +19,7 @@ this django "**project template**"[^1] is based on / assumes you also want / is 
 - TODO custom user model (because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project))
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - whitenoise
+- `core` default/main app with a mini `/` function view & template file
 
 bonus round
 
@@ -64,6 +65,10 @@ finally:
 - https://12factor.net/ - started it all
 - https://github.com/cookiecutter/cookiecutter-django - exactly like this, "Cookiecutter Django is a framework for jumpstarting production-ready Django projects quickly" - but too much-y for my taste. it's great! I just wanted my own so I made this.
 - https://github.com/jefftriplett/django-startproject - similar to this as well
+- other ones:
+  - [djangox](https://github.com/wsvincent/djangox)
+  - [django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate)
+  - [Django Material Kit](https://github.com/app-generator/django-material-kit)
 
 ## huh
 

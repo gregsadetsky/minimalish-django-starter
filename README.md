@@ -16,7 +16,7 @@ this django "**project template**"[^1] aka boilerplate is based on / assumes you
 - dev/prod separation in the settings
 - postgres via `psycopg2-binary`
 - postgres database url set via env var thanks to `dj-database-url`
-- TODO custom user model[^3]
+- custom user model[^3]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - whitenoise
 - `core` default/main app with a mini `/` function view & template file

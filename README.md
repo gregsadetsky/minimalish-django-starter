@@ -55,6 +55,7 @@ finally:
 - go to render.com, create a new "blueprint instance" and point it to your repo
   - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain (comma separate if you have multiple)
 - you should be live!!
+- delete the contents of this readme and start anew; you could even add a little [powered by minimalish django starter](https://github.com/gregsadetsky/minimalish-django-starter) but don't fret.
 
 ## misc/extra bonus
 

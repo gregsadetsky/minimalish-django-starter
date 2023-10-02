@@ -16,7 +16,7 @@ this django "**project template**"[^1] aka boilerplate is based on / assumes you
 - dev/prod separation in the settings
 - postgres via `psycopg2-binary`
 - postgres database url set via env var thanks to `dj-database-url`
-- TODO custom user model (because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project))
+- TODO custom user model[^3]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - whitenoise
 - `core` default/main app with a mini `/` function view & template file
@@ -73,3 +73,4 @@ this project was done during my time at the [Recurse Center](https://recurse.com
 
 [^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...
 [^2]: not married to this version, it's just very modern and version 5 juuust came out so I'll hang around 4.2
+[^3]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)

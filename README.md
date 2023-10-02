@@ -8,7 +8,7 @@ you are like me and want to _quickly_ start working on - and deploy! - a minimal
 
 this django "**project template**"[^1] aka boilerplate is based on / assumes you also want / is made out of the following:
 
-- django 4.2.5 (not married to this version, it's just very modern and version 5 juuust came out so I'll hang around 4.2)
+- django 4.2.5[^2]
 - python 3.10/.11 ish
 - pip / venv / requirements.txt - tried and true, it works, etc.
 - .env configuration files on developers' machines using `python-dotenv`
@@ -72,3 +72,4 @@ finally:
 this project was done during my time at the [Recurse Center](https://recurse.com/)
 
 [^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...
+[^2]: not married to this version, it's just very modern and version 5 juuust came out so I'll hang around 4.2

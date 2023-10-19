@@ -61,7 +61,7 @@ bonus round
 
 ## more extra bonus things
 
-- I suggest you use Black and Pyright via text editor packages. Black should auto-format on save. TODO add black to this thing.
+- I suggest you setup & use Black and Pyright via text editor packages. Black should auto-format on save. TODO add black to this thing using pre-commit
 
 ## other resources
 

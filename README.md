@@ -42,17 +42,17 @@ finally:
 
 "minimalish" (i.e. this!) is a django "**project template**"[^1] aka boilerplate that is based on / assumes you also want / is made out of the following:
 
-- django 4.2.5[^2]
+- [django](https://www.djangoproject.com/) 4.2.5[^2]
 - python 3.10/.11 ish
 - pip / venv / requirements.txt - tried and true, it works, etc.
-- .env configuration files on developers' machines using `python-dotenv`
+- .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - os-level env vars on production
 - dev/prod separation in the settings
-- postgres via `psycopg2-binary`
-- postgres database url set via env var thanks to `dj-database-url`
+- postgres via [`psycopg2-binary`](https://pypi.org/project/psycopg2-binary/)
+- postgres database url set via env var thanks to [`dj-database-url`](https://pypi.org/project/dj-database-url/)
 - custom user model[^3]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
-- whitenoise
+- [whitenoise](https://whitenoise.readthedocs.io/en/latest/) for static file serving
 - `core` default/main app with a mini `/` function view & template file
 
 bonus round

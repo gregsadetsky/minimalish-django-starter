@@ -47,7 +47,7 @@ finally:
 - pip / [venv](https://docs.python.org/3/library/venv.html) / requirements.txt - tried and true, it works, etc.
 - .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - os-level env vars on production
-- dev/prod separation in the settings
+- dev/prod [separation](starter/settings) in the settings
 - postgres via [`psycopg2-binary`](https://pypi.org/project/psycopg2-binary/)
 - postgres database url set via env var thanks to [`dj-database-url`](https://pypi.org/project/dj-database-url/)
 - custom user model[^3]

@@ -57,7 +57,7 @@ finally:
 
 bonus round
 
-- configuration & script files to deploy all of this to render.com!! - they are like heroku used to be i.e. good
+- [configuration](render.yaml) & [script](bin/build.sh) to deploy, build & run all of this on render.com!! - they are like heroku used to be i.e. good (sorry [not sorry](https://news.ycombinator.com/item?id=34598563))
 
 ## more extra bonus things
 

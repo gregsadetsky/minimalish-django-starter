@@ -44,7 +44,7 @@ finally:
 
 - [django](https://www.djangoproject.com/) 4.2.5[^2]
 - python 3.10/.11 ish
-- pip / venv / requirements.txt - tried and true, it works, etc.
+- pip / [venv](https://docs.python.org/3/library/venv.html) / requirements.txt - tried and true, it works, etc.
 - .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - os-level env vars on production
 - dev/prod separation in the settings

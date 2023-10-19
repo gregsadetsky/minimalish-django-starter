@@ -6,7 +6,7 @@ you are like me and want to _quickly_ start working on - and deploy! - a minimal
 
 ## let's do it immediately
 
-to initiate a new Django project using this starter kit template (copy-paste all of it):
+to initiate a new Django project using this starter kit template, copy-paste & run all of the code below:
 
 ```bash
 echo -n "what's your project name (keep it short, lowercase, etc.)? "

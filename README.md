@@ -22,8 +22,8 @@ git init
 
 then:
 
+- create a new postgres database locally (on mac and need help? see the footnote[^0])
 - duplicate `.env.example` to `.env` and fill it out
-- create the appropriate postgres database locally (on mac and need help? see the footnote[^0])
 - run `python manage.py migrate`
 - start the server with `python manage.py runserver`
 - do good work

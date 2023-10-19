@@ -52,7 +52,7 @@ finally:
 - postgres database url set via env var thanks to [`dj-database-url`](https://pypi.org/project/dj-database-url/)
 - custom user model[^3]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
-- [whitenoise](https://whitenoise.readthedocs.io/en/latest/) for static file serving
+- [`whitenoise`](https://whitenoise.readthedocs.io/en/latest/) for static file serving
 - `core` default/main app with a mini `/` function view & template file
 
 bonus round

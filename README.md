@@ -30,15 +30,17 @@ then:
 
 finally:
 
-- git add/commit/push to a new repo
-- go to render.com, create a new "blueprint instance" and point it to your repo
-  - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain (comma separate if you have multiple)
-- you should be live!!
-- delete the contents of this readme and start anew; you could even add a little [powered by minimalish django starter](https://github.com/gregsadetsky/minimalish-django-starter) but don't fret.
+- create a new repo (on github -- [go here](https://github.com/new))
+- git add/commit/push all of your code to this new repo
+- go to [render.com](https://render.com/), go to "[Blueprints](https://dashboard.render.com/blueprints)" and click the "New Blueprint Instance" button. assuming that your github account is connected to your render account, connect your new repo with the new blueprint
+  - set the `ALLOWED_HOSTS` value to the domain name you want to use and/or the `.onrender.com` sub-domain (see below). comma separate domains if you have multiple.
+  - it can be confusing to do the step because you won't know which .onrender.com domain you'll be given... uh... I guess you can write some domain in ALLOWED_HOSTS, do the render blueprint deployment, then see which domain you actually got, and then edit the ALLOWED_HOSTS value to the right .onrender.com domain... sorry, this is not perfect! TODO make it better.
+- ok phew, you should be live!!!
+- delete the contents of this readme and start anew; you could even add a little [powered by minimalish django starter](https://github.com/gregsadetsky/minimalish-django-starter) note at the bottom? but don't fret. TODO make the default readme not be the minimalish readme.
 
-## ok
+## I want more technical information
 
-this django "**project template**"[^1] aka boilerplate is based on / assumes you also want / is made out of the following:
+"minimalish" (i.e. this!) is a django "**project template**"[^1] aka boilerplate that is based on / assumes you also want / is made out of the following:
 
 - django 4.2.5[^2]
 - python 3.10/.11 ish
@@ -57,18 +59,18 @@ bonus round
 
 - configuration & script files to deploy all of this to render.com!! - they are like heroku used to be i.e. good
 
-## misc/extra bonus
+## more extra bonus things
 
-- use Black and Pyright via text editor packages. Black should auto-format on save.
+- I guesst you use Black and Pyright via text editor packages. Black should auto-format on save. TODO add black to this thing.
 
 ## other resources
 
-- https://12factor.net/ - started it all
+- https://12factor.net/ - started "it" all where "it" stands for good web app deployment practices
 - https://github.com/cookiecutter/cookiecutter-django - exactly like this, "Cookiecutter Django is a framework for jumpstarting production-ready Django projects quickly" - but too much-y for my taste. it's great! I just wanted my own so I made this.
 - https://github.com/jefftriplett/django-startproject - similar to this as well
 - other ones: [djangox](https://github.com/wsvincent/djangox), [django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate), [Django Material Kit](https://github.com/app-generator/django-material-kit)
 
-## huh
+## huh!
 
 this project was done during my time at the [Recurse Center](https://recurse.com/)
 

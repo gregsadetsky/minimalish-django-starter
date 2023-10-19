@@ -4,6 +4,38 @@
 
 you are like me and want to _quickly_ start working on - and deploy! - a minimalish Django project. wow you've literally come to the right place.
 
+## let's do it immediately
+
+to initiate a new Django project using this starter kit template (copy-paste all of it):
+
+```bash
+echo -n "what's your project name (keep it short, lowercase, etc.)? "
+read PROJECTNAME
+python3 -m venv venv
+source venv/bin/activate
+pip install Django==4.2.5
+django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n ".env.example" -n "render.yaml" $PROJECTNAME .
+pip install -r requirements.txt
+mv starter $PROJECTNAME
+git init
+```
+
+then:
+
+- duplicate `.env.example` to `.env` and fill it out
+- create the appropriate postgres database locally (on mac and need help? see the footnote[^0])
+- run `python manage.py migrate`
+- start the server with `python manage.py runserver`
+- do good work
+
+finally:
+
+- git add/commit/push to a new repo
+- go to render.com, create a new "blueprint instance" and point it to your repo
+  - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain (comma separate if you have multiple)
+- you should be live!!
+- delete the contents of this readme and start anew; you could even add a little [powered by minimalish django starter](https://github.com/gregsadetsky/minimalish-django-starter) but don't fret.
+
 ## ok
 
 this django "**project template**"[^1] aka boilerplate is based on / assumes you also want / is made out of the following:
@@ -25,38 +57,6 @@ bonus round
 
 - configuration & script files to deploy all of this to render.com!! - they are like heroku used to be i.e. good
 
-## how
-
-to initiate a new Django project using this starter kit template (copy-paste all of it):
-
-```bash
-echo -n "what's your project name? "
-read PROJECTNAME
-python3 -m venv venv
-source venv/bin/activate
-pip install Django==4.2.5
-django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n ".env.example" -n "render.yaml" $PROJECTNAME .
-pip install -r requirements.txt
-mv starter $PROJECTNAME
-git init
-```
-
-then:
-
-- duplicate `.env.example` to `.env` and fill it out
-- create the appropriate postgres database locally
-- run `python manage.py migrate`
-- start the server with `python manage.py runserver`
-- do good work
-
-finally:
-
-- git add/commit/push to a new repo
-- go to render.com, create a new "blueprint instance" and point it to your repo
-  - set the `ALLOWED_HOSTS` env var to the domain name you want to use and/or the `.onrender.com` sub-domain (comma separate if you have multiple)
-- you should be live!!
-- delete the contents of this readme and start anew; you could even add a little [powered by minimalish django starter](https://github.com/gregsadetsky/minimalish-django-starter) but don't fret.
-
 ## misc/extra bonus
 
 - use Black and Pyright via text editor packages. Black should auto-format on save.
@@ -72,6 +72,7 @@ finally:
 
 this project was done during my time at the [Recurse Center](https://recurse.com/)
 
+[^0]: if you're on mac, I suggest [Postgres.app](https://postgresapp.com/) to run postgres locally and [Postico](https://eggerapps.at/postico2/) to view & change stuff in the database
 [^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...
 [^2]: not married to this version, it's just very modern and version 5 juuust came out so I'll hang around 4.2
 [^3]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)

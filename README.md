@@ -13,7 +13,7 @@ echo -n "what's your project name (keep it short, lowercase, etc.)? "
 read PROJECTNAME
 python3 -m venv venv
 source venv/bin/activate
-pip install Django==4.2.5
+pip install Django==4.2.6
 django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n ".env.example" -n "render.yaml" $PROJECTNAME .
 pip install -r requirements.txt
 mv starter $PROJECTNAME
@@ -42,7 +42,7 @@ finally:
 
 "minimalish" (i.e. this!) is a django "**project template**"[^1] aka boilerplate that is based on / assumes you also want / is made out of the following:
 
-- [django](https://www.djangoproject.com/) 4.2.5[^2]
+- [django](https://www.djangoproject.com/) 4.2.6[^2]
 - python 3.10/.11 ish
 - pip / [venv](https://docs.python.org/3/library/venv.html) / requirements.txt - tried and true, it works, etc.
 - .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)

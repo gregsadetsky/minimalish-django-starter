@@ -9,15 +9,18 @@ you are like me and want to _quickly_ start working on - and deploy! - a minimal
 to initiate a new Django project using this starter kit template, copy-paste & run all of the code below:
 
 ```bash
-echo -n "what's your project name (keep it short, lowercase, etc.)? "
+echo -n "what's your project name (short, lowercase-only, no spaces or hyphens, etc.)? "
 read PROJECTNAME
+mkdir $PROJECTNAME
+cd $PROJECTNAME
 python3 -m venv venv
 source venv/bin/activate
 pip install Django==4.2.6
-django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n ".env.example" -n "render.yaml" $PROJECTNAME .
+django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n ".env.example" -n "render.yaml" -n "README.starter.md" $PROJECTNAME .
 pip install -r requirements.txt
-mv starter $PROJECTNAME
 git init
+mv starter $PROJECTNAME
+mv README.starter.md README.md
 ```
 
 then:

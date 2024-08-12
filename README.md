@@ -1,12 +1,19 @@
-# Minimalish Django Starter
+# Minimalish Django Starter Kit
 
-### why
+## intro
 
-you are like me and want to _quickly_ start working on - and deploy! - a minimalish Django project. wow you've literally come to the right place.
+Minimalish is a Django Project Template. It's an opiniated, deployment-ready, "good enough" starting point that includes most of everything you'd want to have in a Django project:
 
-## let's do it immediately
+- dev / prod environment separation
+- environment variables (per the classic [12factor](https://12factor.net/)) with fallback to `.env` (useful on dev)
+- static file serving
+- integration of the frontend bundler Vite so that you can combine a TypeScript frontend with a Django backend. this is great for React projects, which most frontend projects are these days.
+  - you also don't have to use Vite or write a TypeScript frontend -- the classic Django html templating still works fine.
+- all of the necessary files to deploy your site using [disco](https://letsdisco.dev/)
 
-to initiate a new Django project using this starter kit template, copy-paste & run all of the code below:
+## how to do it
+
+copy & paste the code below to start a new Django project based on this template:
 
 ```bash
 echo -n "what's your project name (short, lowercase-only, no spaces or hyphens, etc.)? "
@@ -15,56 +22,48 @@ mkdir $PROJECTNAME
 cd $PROJECTNAME
 python3 -m venv venv
 source venv/bin/activate
-pip install Django==4.2.6
-django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n ".env.example" -n "render.yaml" -n "README.starter.md" $PROJECTNAME .
+pip install Django==5.1
+django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n .env.example -n README.starter.md $PROJECTNAME .
 pip install -r requirements.txt
 git init
 mv starter $PROJECTNAME
 mv README.starter.md README.md
+cp .env.example .env
+python manage.py migrate
 ```
 
 then:
 
-- create a new postgres database locally (on mac and need help? see the footnote[^0])
-- duplicate `.env.example` to `.env` and fill it out
-- run `python manage.py migrate`
+- fill out the `DJANGO_SECRET_KEY` value in the `.env` file
 - start the server with `python manage.py runserver`
-- do good work
+- do good work!
 
-finally:
+to deploy using disco:
 
 - create a new repo (on github -- [go here](https://github.com/new))
 - git add/commit/push all of your code to this new repo
-- go to [render.com](https://render.com/), go to "[Blueprints](https://dashboard.render.com/blueprints)" and click the "New Blueprint Instance" button. assuming that your github account is connected to your render account, connect your new repo with the new blueprint
-  - set the `ALLOWED_HOSTS` value to the domain name you want to use and/or the `.onrender.com` sub-domain (see below). comma separate domains if you have multiple.
-  - it can be confusing to do the previous step because you won't know which .onrender.com domain you'll be given when setting up the blueprint... uh... I guess you can write some domain in ALLOWED_HOSTS like example.com, do the render blueprint deployment, then see which domain you actually got, and then edit the ALLOWED_HOSTS value to the right .onrender.com domain... sorry, this is not perfect! TODO make it better.
-- ok phew, you should be live!!!
-- delete the contents of this readme and start anew; you could even add a little [powered by minimalish django starter](https://github.com/gregsadetsky/minimalish-django-starter) note at the bottom? but don't fret. TODO make the default readme not be the minimalish readme.
+- refer to the [disco Django+SQLite docs](https://docs.letsdisco.dev/deployment-guides/django)
 
-## I want more technical information
+## more technical info
 
-"minimalish" (i.e. this!) is a django "**project template**"[^1] aka boilerplate that is based on / assumes you also want / is made out of the following:
+Minimalish uses:
 
-- [django](https://www.djangoproject.com/) 4.2.6[^2]
+- [Django](https://www.djangoproject.com/) 5.1
 - python 3.10/.11 ish
-- pip / [venv](https://docs.python.org/3/library/venv.html) / requirements.txt - tried and true, it works, etc.
+- pip / [venv](https://docs.python.org/3/library/venv.html) / requirements.txt
 - .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - os-level env vars on production
 - dev/prod [separation](starter/settings) in the settings
-- postgres via [`psycopg2-binary`](https://pypi.org/project/psycopg2-binary/)
-- postgres database url set via env var thanks to [`dj-database-url`](https://pypi.org/project/dj-database-url/)
-- custom user model[^3]
+- integration of [Vite](https://vitejs.dev/) using [django-vite](https://github.com/MrBin99/django-vite) TODO
+- a custom user model[^2]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - [`whitenoise`](https://whitenoise.readthedocs.io/en/latest/) for static file serving
 - `core` default/main app with a mini `/` function view & template file
-
-bonus round
-
-- [configuration](render.yaml) & [script](bin/build.sh) to deploy, build & run all of this on render.com!! - they are like heroku used to be i.e. good (sorry [not sorry](https://news.ycombinator.com/item?id=34598563))
+- the necessary files to deploy this using [disco](https://letsdisco.dev/) TODO
 
 ## more extra bonus things
 
-- I suggest you setup & use [Black](https://github.com/psf/black) and [Pyright](https://github.com/microsoft/pyright) via text editor packages. Black should auto-format on save. TODO add black to this thing using pre-commit
+- I suggest you setup & use [Black](https://github.com/psf/black) and [Pyright](https://github.com/microsoft/pyright) via text editor packages. Black should auto-format on save. TODO add black via pre-commit
 
 ## other resources
 
@@ -73,11 +72,9 @@ bonus round
 - https://github.com/jefftriplett/django-startproject - similar to this as well
 - other ones: [djangox](https://github.com/wsvincent/djangox), [django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate), [Django Material Kit](https://github.com/app-generator/django-material-kit)
 
-## huh!
+## credit
 
-this project was done during my time at the [Recurse Center](https://recurse.com/)
+this project was done during my time at the [Recurse Center](https://recurse.com/). thanks to [Rob Simmons](https://github.com/robsimmons) for the contributions!
 
-[^0]: if you're on mac, I suggest [Postgres.app](https://postgresapp.com/) to run postgres locally and [Postico](https://eggerapps.at/postico2/) to view & change stuff in the database
 [^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...
-[^2]: not married to this version, it's just very modern and version 5 juuust came out so I'll hang around 4.2
-[^3]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)
+[^2]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)

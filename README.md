@@ -29,9 +29,9 @@ git init
 mv starter $PROJECTNAME
 mv README.starter.md README.md
 cp .env.example .env
+mkdir core/frontend/static
 python manage.py migrate
 (cd core/frontend && npm install)
-mkdir core/frontend/static
 ```
 
 then:

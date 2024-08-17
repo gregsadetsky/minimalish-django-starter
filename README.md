@@ -9,7 +9,7 @@ Minimalish is a Django Project Template. It's an opiniated, deployment-ready, "g
 - static file serving
 - integration of the frontend bundler Vite so that you can combine a TypeScript frontend with a Django backend. this is great for React projects, which most frontend projects are these days.
   - you also don't have to use Vite or write a TypeScript frontend -- the classic Django html templating still works fine.
-- all of the necessary files to deploy your site using [disco](https://letsdisco.dev/)
+- all of the necessary files to deploy your site using [disco](https://letsdisco.dev/) TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
 
 ## how to do it
 
@@ -55,7 +55,7 @@ Minimalish uses:
 - os-level env vars on production
 - dev/prod [separation](starter/settings) in the settings
 - integration of [Vite](https://vitejs.dev/) using [django-vite](https://github.com/MrBin99/django-vite) TODO
-- a custom user model[^2]
+- a custom user model[^1]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - [`whitenoise`](https://whitenoise.readthedocs.io/en/latest/) for static file serving
 - `core` default/main app with a mini `/` function view & template file
@@ -74,7 +74,6 @@ Minimalish uses:
 
 ## credit
 
-this project was done during my time at the [Recurse Center](https://recurse.com/). thanks to [Rob Simmons](https://github.com/robsimmons) for the contributions!
+this project was initially created during my time at the [Recurse Center](https://recurse.com/). thanks to [Rob Simmons](https://github.com/robsimmons) for the contributions!
 
-[^1]: it's really confusing to use the word "template" because it's not a ... [template](https://docs.djangoproject.com/en/4.2/topics/templates/)...
-[^2]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)
+[^1]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)

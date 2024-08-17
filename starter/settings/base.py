@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # https://github.com/MrBin99/django-vite
+    "django_vite",
     "core",
 ]
 
@@ -131,6 +133,7 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+STATICFILES_DIRS = [BASE_DIR / ".." / "core" / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

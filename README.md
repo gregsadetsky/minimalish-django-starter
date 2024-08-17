@@ -23,7 +23,7 @@ cd $PROJECTNAME
 python3 -m venv venv
 source venv/bin/activate
 pip install Django==5.1
-django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n .env.example -n README.starter.md $PROJECTNAME .
+django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n .env.example -n README.starter.md -x core/frontend/package.json $PROJECTNAME .
 pip install -r requirements.txt
 git init
 mv starter $PROJECTNAME

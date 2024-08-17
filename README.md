@@ -9,7 +9,7 @@ Minimalish is a Django Project Template. It's an opiniated, deployment-ready, "g
 - static file serving
 - integration of the frontend bundler Vite so that you can combine a TypeScript frontend with a Django backend. this is great for React projects, which most frontend projects are these days.
   - you also don't have to use Vite or write a TypeScript frontend -- the classic Django html templating still works fine.
-- all of the necessary files to deploy your site using [disco](https://letsdisco.dev/) TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+- all of the necessary files to deploy your site using [disco](https://letsdisco.dev/)
 
 ## how to do it
 

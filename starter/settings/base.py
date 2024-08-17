@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
+from django.utils.log import DEFAULT_LOGGING
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -133,7 +134,10 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-STATICFILES_DIRS = [BASE_DIR / ".." / "core" / "static"]
+STATICFILES_DIRS = [
+    BASE_DIR / ".." / "core" / "static",
+    BASE_DIR / ".." / "core" / "static" / "core" / "js" / "dist",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -142,3 +146,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
 AUTH_USER_MODEL = "core.User"
+
+# start from default values -- so that they can be overriden later
+# https://stackoverflow.com/a/25508761
+LOGGING = DEFAULT_LOGGING

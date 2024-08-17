@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,11 +7,11 @@ export default defineConfig({
   base: "/static/",
   build: {
     manifest: "manifest.json",
-    outDir: "../static/js/dist",
+    outDir: "../static/core/js/dist",
     rollupOptions: {
       input: {
-        'main': './src/main.tsx',
-      }
-    }
-  }
-})
+        main: "./src/main.tsx",
+      },
+    },
+  },
+});

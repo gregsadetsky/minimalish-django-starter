@@ -160,4 +160,3 @@ cython_debug/
 #.idea/
 
 .DS_Store
-__local_testing

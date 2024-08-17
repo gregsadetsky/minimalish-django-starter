@@ -37,8 +37,15 @@ python manage.py migrate
 then:
 
 - fill out the `DJANGO_SECRET_KEY` value in the `.env` file
-- start the server with `python manage.py runserver`
-- do good work!
+- in one terminal, start the Django backend server with `python manage.py runserver`
+- in another terminal:
+
+```bash
+cd core/frontend
+npm run dev
+```
+
+- go to http://localhost:8000/ and do good work!
 
 to deploy using disco:
 

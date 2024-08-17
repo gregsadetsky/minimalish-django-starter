@@ -30,6 +30,8 @@ mv starter $PROJECTNAME
 mv README.starter.md README.md
 cp .env.example .env
 python manage.py migrate
+cd core/frontend
+npm install
 ```
 
 then:

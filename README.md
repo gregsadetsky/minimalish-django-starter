@@ -68,7 +68,7 @@ Minimalish uses:
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - [`whitenoise`](https://whitenoise.readthedocs.io/en/latest/) for static file serving
 - `core` default/main app with a mini `/` function view & template file
-- the necessary files to deploy this using [disco](https://letsdisco.dev/) TODO
+- the necessary files to deploy this using [disco](https://letsdisco.dev/)
 
 ## more extra bonus things
 

@@ -12,13 +12,11 @@ next:
 - make sure your venv is still active, otherwise `source venv/bin/activate`
 - run `python manage.py migrate`
 - start the server with `python manage.py runserver`
-- do good work!
+- go to http://localhost:8000/ and do good work!
+- to see the vite/react index page, head to http://localhost:8000/react
+  - the frontend TypeScript code is under `core/frontend/src/`
 
-to deploy using disco:
-
-- create a new repo (on github -- [go here](https://github.com/new))
-- git add/commit/push all of your code to this new repo
-- refer to the [disco Django+SQLite docs](https://docs.letsdisco.dev/deployment-guides/django)
+to deploy using disco, create a new github repo with your new directory, and refer to the [disco Django+SQLite docs](https://docs.letsdisco.dev/deployment-guides/django).
 
 # Development basics
 

@@ -63,7 +63,7 @@ Minimalish uses:
 - .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - os-level env vars on production
 - dev/prod [separation](starter/settings) in the settings
-- integration of [Vite](https://vitejs.dev/) using [django-vite](https://github.com/MrBin99/django-vite) TODO
+- integration of [Vite](https://vitejs.dev/) using [django-vite](https://github.com/MrBin99/django-vite)
 - a custom user model[^1]
 - use of `os.environ[]` rather than the softer `os.getenv()` which by design silently fails. if an env var can't be found, that's a problem that needs addressing
 - [`whitenoise`](https://whitenoise.readthedocs.io/en/latest/) for static file serving

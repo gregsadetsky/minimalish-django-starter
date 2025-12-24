@@ -8,9 +8,9 @@ echo "Minimalish Django Starter"
 echo "========================="
 echo ""
 
-# Get project name (read from /dev/tty so it works when piped)
+# Get project name
 printf "Project name (lowercase, no spaces/hyphens): "
-read PROJECTNAME < /dev/tty
+read PROJECTNAME
 
 # Validate project name
 if [ -z "$PROJECTNAME" ]; then
@@ -62,6 +62,7 @@ mv starter "$PROJECTNAME"
 # Setup files
 mv README.starter.md README.md
 cp .env.example .env
+rm -f bootstrap.sh
 
 # Create static directory
 mkdir -p core/frontend/static

@@ -13,10 +13,12 @@ Minimalish is a Django Project Template. It's an opiniated, deployment-ready, "g
 
 ## how to do it
 
-Run this command to create a new project:
+Run these commands to create a new project:
 
 ```bash
-curl -s https://raw.githubusercontent.com/gregsadetsky/minimalish-django-starter/main/bootstrap.sh | sh
+curl -O https://raw.githubusercontent.com/gregsadetsky/minimalish-django-starter/main/bootstrap.sh
+chmod +x bootstrap.sh
+./bootstrap.sh
 ```
 
 This will prompt you for a project name and set everything up automatically (venv, dependencies, migrations, secret key).

@@ -2,7 +2,19 @@
 set -e
 
 # Minimalish Django Starter - Bootstrap Script
-# Usage: curl -s https://raw.githubusercontent.com/gregsadetsky/minimalish-django-starter/main/bootstrap.sh | sh
+#
+# Usage:
+#   curl -O https://raw.githubusercontent.com/gregsadetsky/minimalish-django-starter/main/bootstrap.sh
+#   chmod +x bootstrap.sh
+#   ./bootstrap.sh
+#
+# Local development:
+#   To test changes without pushing to GitHub, set MINIMALISH_LOCAL to the path
+#   of your local clone:
+#
+#   MINIMALISH_LOCAL=/path/to/minimalish-django-starter ./bootstrap.sh
+#
+#   This will use the local directory as the template instead of the GitHub URL.
 
 echo "Minimalish Django Starter"
 echo "========================="
@@ -47,8 +59,14 @@ pip install Django==5.2 --quiet
 
 # Run startproject with template
 echo "-> Running django-admin startproject..."
+if [ -n "$MINIMALISH_LOCAL" ]; then
+    TEMPLATE_PATH="$MINIMALISH_LOCAL"
+    echo "   (using local template: $TEMPLATE_PATH)"
+else
+    TEMPLATE_PATH="https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip"
+fi
 django-admin startproject \
-    --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip \
+    --template="$TEMPLATE_PATH" \
     -n .env.example -n README.starter.md -n serve.sh \
     "$PROJECTNAME" .
 

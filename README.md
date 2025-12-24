@@ -69,4 +69,4 @@ Minimalish uses:
 
 this project was initially created during my time at the [Recurse Center](https://recurse.com/). thanks to [Rob Simmons](https://github.com/robsimmons) for the contributions!
 
-[^1]: because you only get [one chance](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)
+[^1]: because you only get [one chance](https://docs.djangoproject.com/en/5.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)

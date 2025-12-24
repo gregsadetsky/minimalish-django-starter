@@ -82,8 +82,9 @@ mv README.starter.md README.md
 cp .env.example .env
 rm -f bootstrap.sh
 
-# Create static directory
+# Create static directories
 mkdir -p core/frontend/static
+mkdir -p core/static/core/js/dist
 
 # Generate a secret key and set it in .env
 SECRET_KEY=$(python3 -c "import secrets; print(secrets.token_urlsafe(50))")

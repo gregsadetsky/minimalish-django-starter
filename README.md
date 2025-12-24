@@ -13,41 +13,25 @@ Minimalish is a Django Project Template. It's an opiniated, deployment-ready, "g
 
 ## how to do it
 
-copy & paste the code below to start a new Django project based on this template:
+Run this command to create a new project:
 
 ```bash
-echo -n "what's your project name (short, lowercase-only, no spaces or hyphens, etc.)? "
-read PROJECTNAME
-mkdir $PROJECTNAME
-cd $PROJECTNAME
-python3 -m venv venv
-source venv/bin/activate
-pip install Django==5.2
-django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n .env.example -n README.starter.md -n serve.sh $PROJECTNAME .
-pip install -r requirements.txt
-git init
-mv starter $PROJECTNAME
-mv README.starter.md README.md
-cp .env.example .env
-mkdir core/frontend/static
-python manage.py migrate
-(cd core/frontend && npm install)
+curl -s https://raw.githubusercontent.com/gregsadetsky/minimalish-django-starter/main/bootstrap.sh | sh
 ```
 
-then:
+This will prompt you for a project name and set everything up automatically (venv, dependencies, migrations, secret key).
 
-- fill out the `DJANGO_SECRET_KEY` value in the `.env` file
-- in one terminal, start the Django backend server with `python manage.py runserver`
-- in another terminal:
+Then:
 
-```bash
-cd core/frontend
-npm run dev
-```
-
+- activate the venv: `source venv/bin/activate`
+- start the dev server: `python manage.py runserver`
 - go to http://localhost:8000/ and do good work!
-- to see the vite/react index page, head to http://localhost:8000/react
-  - the frontend TypeScript code is under `core/frontend/src/`
+
+For the React frontend (optional):
+
+- in another terminal, run `cd core/frontend && npm install && npm run dev`
+- visit http://localhost:8000/react to see the vite/react page
+- the frontend TypeScript code is under `core/frontend/src/`
 
 to deploy using disco, create a new github repo with your new directory, and refer to the [disco Django+SQLite docs](https://docs.letsdisco.dev/deployment-guides/django).
 

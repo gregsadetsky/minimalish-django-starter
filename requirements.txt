@@ -1,6 +1,6 @@
 asgiref==3.8.1
 dj-database-url==2.3.0
-Django==5.1.5
+Django==5.2.9
 django-vite==3.0.6
 gunicorn==23.0.0
 packaging==24.2

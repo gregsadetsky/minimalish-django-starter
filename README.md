@@ -22,7 +22,7 @@ mkdir $PROJECTNAME
 cd $PROJECTNAME
 python3 -m venv venv
 source venv/bin/activate
-pip install Django==5.1
+pip install Django==5.2
 django-admin startproject --template=https://github.com/gregsadetsky/minimalish-django-starter/archive/main.zip -n .env.example -n README.starter.md -n serve.sh $PROJECTNAME .
 pip install -r requirements.txt
 git init
@@ -55,7 +55,7 @@ to deploy using disco, create a new github repo with your new directory, and ref
 
 Minimalish uses:
 
-- [Django](https://www.djangoproject.com/) 5.1
+- [Django](https://www.djangoproject.com/) 5.2 LTS
 - python 3.10/.11 ish
 - pip / [venv](https://docs.python.org/3/library/venv.html) / requirements.txt
 - .env configuration files on developers' machines using [`python-dotenv`](https://pypi.org/project/python-dotenv/)

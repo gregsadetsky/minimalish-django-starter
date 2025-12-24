@@ -8,9 +8,9 @@ echo "Minimalish Django Starter"
 echo "========================="
 echo ""
 
-# Get project name
+# Get project name (read from /dev/tty so it works when piped)
 printf "Project name (lowercase, no spaces/hyphens): "
-read PROJECTNAME
+read PROJECTNAME < /dev/tty
 
 # Validate project name
 if [ -z "$PROJECTNAME" ]; then

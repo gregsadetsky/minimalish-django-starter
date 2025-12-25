@@ -9,7 +9,7 @@ Minimalish is a Django Project Template. It's an opiniated, deployment-ready, "g
 - static file serving
 - integration of the frontend bundler [Vite](https://vitejs.dev/) so that you can combine a TypeScript frontend with a Django backend. this is great for React projects, which most frontend projects are these days.
   - you also don't have to use Vite or write a TypeScript frontend -- the classic Django html templating still works fine.
-- all of the necessary files to deploy your site using [disco](https://letsdisco.dev/)
+- all of the necessary files to deploy your site using [Disco](https://disco.cloud/)
 
 ## how to do it
 
@@ -35,7 +35,7 @@ For the React frontend (optional):
 - visit http://localhost:8000/react to see the vite/react page
 - the frontend TypeScript code is under `core/frontend/src/`
 
-to deploy using disco, create a new github repo with your new directory, and refer to the [disco Django+SQLite docs](https://docs.letsdisco.dev/deployment-guides/django).
+to deploy using Disco, create a new GitHub repo with your new directory, and refer to the [Disco docs](https://disco.cloud/docs/).
 
 ## more technical info
 
@@ -53,7 +53,7 @@ Minimalish uses:
 - [`whitenoise`](https://whitenoise.readthedocs.io/en/latest/) for static file serving
 - [`django-ninja`](https://django-ninja.dev/) for API routes (see `core/api/`)
 - `core` default/main app with a mini `/` function view & template file
-- the necessary files to deploy this using [disco](https://letsdisco.dev/)
+- the necessary files to deploy this using [Disco](https://disco.cloud/)
 
 ## more extra bonus things
 
